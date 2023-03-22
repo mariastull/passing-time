@@ -76,7 +76,7 @@ if day in [1,3]:
 if day in [5, 6]:
     print("It's a weekend.")
     during_class = True
-elif dt.hour < 8 or dt.hour==8 and dt.minute < 40:
+elif dt.hour < 8:  #or dt.hour==8 and dt.minute < 40:
     during_class = True
     print("Classes haven't started yet.")
 elif dt.hour > 18 or dt.hour==18 and dt.minute > 35:
