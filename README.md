@@ -5,4 +5,4 @@ To run, make sure your system's date and time is correct, then run `python3 pass
 
 Prettiest on Linux-based terminals, but should work on Windows too.
 
-Last updated February 2023
+Schedule last updated February 2023
