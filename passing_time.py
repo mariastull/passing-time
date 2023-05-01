@@ -18,5 +18,5 @@ print(get_datetime_description(dt))
 if not during_class(dt):
     passing_period_message(dt)
 
-if dt.day<5:
-    print(get_daily_schedule(get_class_schedule(dt)))
+# print today's schedule
+print(get_daily_schedule(get_class_schedule(dt)))
