@@ -59,12 +59,12 @@ def find_next_class_start(curr_time, schedule):
 # Formats classtime schedule string
 def get_daily_schedule(schedule):
     schedule_string = ""
-    schedule_string = schedule_string + "Today's common class schedule is:\n"
+    schedule_string = schedule_string + "Today's common class schedule is:\n\n"
     if len(schedule) == 0:
         schedule_string = schedule_string + "No classes today\n"
     else:
         for classtime in schedule:
-            schedule_string = schedule_string + "{:d}:{:02d} - {:d}:{:02d}\n".format(classtime[0], classtime[1], classtime[2], classtime[3])
+            schedule_string = schedule_string + "{:d}:{:02d} - {:d}:{:02d}\n\n".format(classtime[0], classtime[1], classtime[2], classtime[3])
     return schedule_string
 
 # get daily schedule
@@ -76,6 +76,12 @@ def get_class_schedule(dt):
     if dt.weekday() in [5,6]:
         class_schedule = Weekend_class_times
     return class_schedule
+
+def check_for_classtime(dt):
+    for classtime in get_class_schedule(dt):
+            if during_class_now(dt, classtime):
+                return True
+    return False
 
 # check if it's currently during class
 def during_class(dt):
